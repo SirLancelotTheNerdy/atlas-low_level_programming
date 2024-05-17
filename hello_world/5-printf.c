@@ -2,7 +2,7 @@
 /**
  *main - i get it its a long quote or somthing.
  *
- *Returns 0
+ *Returns:0
 */
 int main(void)
 {
