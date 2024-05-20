@@ -16,7 +16,7 @@ int main(void)
 		o = (l + 48);
 
 		putchar(o);
-	
+
 	if (l != 9)
 	{
 		putchar(',');
