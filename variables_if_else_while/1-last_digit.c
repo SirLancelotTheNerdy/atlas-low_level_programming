@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
  * main - header print random number and tells us shit about the last digit.
  * Return: 0
@@ -9,7 +10,7 @@
 int main(void)
 {
 	int n;
-		int v:
+		int v;
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	v = (n % 10);
