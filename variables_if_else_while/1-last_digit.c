@@ -25,7 +25,7 @@ int main(void)
         }
 	if (v == 0)
 	{
-		printf("and is zero\n");
+		printf("and is 0\n");
 	}
 	return (0);
 }
