@@ -1,12 +1,20 @@
- int _putchar(char c);
- void reset_to_98(int *n);
- void swap_int(int *a, int *b);
- int _strlen(char *s);
- void _puts(char *str);
- void print_rev(char *s);
- void rev_string(char *s);
- void puts2(char *str);
- void puts_half(char *str);
- void print_array(int *a, int n);
- char *_strcpy(char *dest, char *src);
- int _atoi(char *s);
+int _putchar(char);
+
+char *_memset(char *l, char a, unsigned int n);
+
+char *_memcpy(char *dest, char *src, unsigned int n);
+
+char *_strchr(char *l, char c);
+
+unsigned int _strspn(char *l, char *accept);
+char *_strpbrk(char *l, char *accept);
+
+char *_strstr(char *haystack, char *needle);
+
+void print_chessboard(char (*b)[8]);
+
+void print_diagsums(int *b, int size);
+
+void set_string(char **l, char *to);
+
+int coincidence(char *b, char *a);
