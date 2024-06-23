@@ -1,18 +1,25 @@
 #include "main.h"
-
 /**
-* _pow_recursion - Returns the value of x^ y
-* @x: the value to multiply
-* @y: the value of the exponent
-* Return: the exponet of y 
-*/
+ * _pow_recursion - finding the value of a num to the power of another.
+ * @base: number given by main.
+ * @expo: decreasing while the base stays the same.
+ *
+ * Return: square root.
+ */
 
-int _pow_recursion(int x, int y)
+int _pow_recursion(int base, int expo)
 {
-	if (y < 0)
-		return (-1);
-	if (y == 0)
-		return (1);
+	if (expo < 0)
+	{
+		return (-1); /* Return -1 for negative exponent */
 
-	return (x * _pow_recursion(x, y - 1));
+	}
+	else if (expo == 0)
+	{
+		return (1); /* Base case: any number to the power of 0 is 1*/
+	}
+	else
+	{
+		return (base * _pow_recursion(base, expo - 1)); /* Recursion */
+	}
 }
