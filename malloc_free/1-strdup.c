@@ -2,16 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * _strdup - allocates space in memory.
+ * _strdup - allocates space in memory to be duplicated.
  *
  * @str: given string
  *
- * Return: returns a pointer to memory
+ * Return: returns a pointer to allocated space in memory
  */
 char *_strdup(char *str)
 {
 	char *new_str;
-	unsigned int l, length;
+	unsigned int i, length;
 
 	if (str == NULL)
 	{
@@ -28,11 +28,11 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	for (l = 0; l < length; l++)
+	for (i = 0; i < length; i++)
 	{
-		new_str[l] = str[l];
+		new_str[i] = str[i];
 	}
-	new_str[ll = '\0';
+	new_str[i] = '\0';
 
 	return (new_str);
 }
