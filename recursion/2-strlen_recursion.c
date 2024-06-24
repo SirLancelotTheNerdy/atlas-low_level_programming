@@ -2,7 +2,6 @@
 /**
  * _strlen_recursion - returns the length of string.
  * @s: the string being counted.
- * 
  * Return: number of cycles before null.
  */
 
