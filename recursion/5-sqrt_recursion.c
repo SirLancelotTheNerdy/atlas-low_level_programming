@@ -9,27 +9,28 @@
  */
 int finder(int n, int bottom, int top)
 {
-	int md;
+	int mid;
 
 	if (bottom > top)
 	{
 		return (-1);
 	}
-	md = bottom + ((top - bottom) / 2);
+	mid = bottom + ((top - bottom) / 2);
 
-	if (md * md == n)
+	if (mid * mid == n)
 	{
-		return (md);
+		return (mid);
 	}
-	else if (md * md < n)
+	else if (mid * mid < n)
 	{
-		return (finder(n, md + 1, top));
+		return (finder(n, mid + 1, top));
 	}
 	else
 	{
 		return (finder(n, bottom, mid - 1));
 	}
 }
+
 
 int _sqrt_recursion(int n)
 {
