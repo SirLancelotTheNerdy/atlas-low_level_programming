@@ -30,3 +30,12 @@ int finder(int n, int bottom, int top)
 		return (finder(n, bottom, mid - 1));
 	}
 }
+
+int _sqrt_recursion(int n)
+{
+	if (n < 0)
+	{
+		return (-1);
+	}
+	return (finder(n, 0, n / 2 + 1));
+}
