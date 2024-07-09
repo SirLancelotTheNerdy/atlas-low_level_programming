@@ -3,22 +3,20 @@
 
 size_t print_list(const list_t *h)
 {
-	size_t count;
+	size_t con = 0;
+	const list_t *move = h;
 
-	count = 0;
+	if (h == NULL)
+		return (0);
 
-	while (h != NULL)
+	while (move != NULL)
 	{
-		if (h->str == NULL)
-		{
-			printf("[%d] %s\n", 0, "(nil)");
-		}
+		if (move->str)
+			printf("[%d] %s\n", move->len, move->str);
 		else
-		{
-			printf("[%d] %s\n", h->len, h->str);
-		}
-		h = h->next;
-		count++;
+			printf("[0] (nil)\n");
+		move = move->next;
+		con++;
 	}
-	return (count);
+	return (con);
 }
