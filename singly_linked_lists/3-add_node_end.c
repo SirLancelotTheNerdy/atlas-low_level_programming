@@ -1,43 +1,42 @@
 #include "lists.h"
 
 
-int str_rec(char *s)
-{
-	if (*s != 0)
-	{
-		return (1 + str_rec(s + 1));
-	}
-	else
-	{
-		return (0);
-	}
-}
-
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new_n;
-	list_t *temp = *head;
+	list_t *new;
+	list_t *last;
+	int con;
 
-	new_n = malloc(sizeof(list_t));
-	if (new_n == NULL)
+	if (head == NULL || str == NULL)
 		return (NULL);
 
-	new_n->str = strdup(str);
-	if (!new_n->str)
+	last = *head;
+
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
+		return (NULL);
+
+	new->str = strdup(str);
+	if (new->str == NULL)
 	{
-		free(new_n);
+		free(new);
 		return (NULL);
 	}
-	new_n->len = str_rec(new_n->str);
-	new_n->next = NULL;
+	for (con = 0; str[con] != '\0'; con++)
+		;
 
-	if (temp)
+	new->len = con;
+	new->next = NULL;
+
+	if (*head == NULL)
 	{
-		while (temp->next)
-			temp = temp->next;
-		temp->next = new_n;
+		*head = new;
+		return (new);
 	}
-	else
-		*head = new_n;
-	return (new_n);
+
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new;
+
+	return (new);
 }

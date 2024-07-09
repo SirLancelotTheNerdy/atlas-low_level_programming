@@ -1,21 +1,32 @@
 #include "lists.h"
-#include <string.h>
+
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_node = malloc(sizeof(list_t));
+	list_t *new;
+	int con = 0;
 
-	if (new_node == NULL)
+	if (head == NULL || str == NULL)
 		return (NULL);
 
-	new_node->str = strdup(str);
-	if (new_node->str == NULL)
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
+		return (NULL);
+
+	new->str = strdup(str);
+	if (!new->str)
 	{
-		free(new_node);
+		free(new);
 		return (NULL);
 	}
-	new_node->len = _strlen(new_node->str);
-	new_node->next = *head;
-	*head = new_node;
-	return (new_node);
+
+	for (con = 0; str[con] != '\0'; con++)
+		;
+
+	new->len = con;
+	new->next = *head;
+
+	*head = new;
+
+	return (new);
 }

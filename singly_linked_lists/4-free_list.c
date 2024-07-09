@@ -3,21 +3,13 @@
 
 void free_list(list_t *head)
 {
-	list_t *current, *next;
+	list_t *move;
 
-	if (head != NULL)
+	while (head != NULL)
 	{
-		current = head;
-		next = current->next;
-
-		while (current != NULL)
-		{
-			free(current->str);
-			free(current);
-			current = next;
-			next = next->next;
-		}
-		free(current->next);
-		free(current);
+		move = head;
+		head = move->next;
+		free(move->str);
+		free(move);
 	}
 }
